@@ -1,4 +1,4 @@
-# Case Study Questions
+# Case Study Answers
 
 Each of the following case study questions can be answered using a single SQL statement:
 ***
