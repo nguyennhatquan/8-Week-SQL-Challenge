@@ -22,6 +22,7 @@ ORDER BY
 | A            | 76              |
 | B            | 74              |
 | C            | 36              |
+
 **Step**
 * `INNER JOIN` two tables `sales`  and `menu` with the former as the base table as we need the `price` column from the latter
 * Use `SUM` and `GROUP BY` to calculate the total spendings for Danny's dishes by each customer
@@ -44,6 +45,7 @@ ORDER BY
 | A            | 4     |
 | B            | 6     |
 | C            | 2     |
+
 **Steps**
 * Use `COUNT(DISTINCT order_date)` to have the number of unique date in `sales` table as each `order_date` appear multiple times 
 * Then, use `GROUP BY` to show the results by `customer_id`
@@ -81,6 +83,7 @@ ORDER BY
 | A            | sushi         |
 | B            | curry         |
 | C            | ramen         |
+
 **Step**
 * Create a `CTE`, using window function `DENSE_RANK()` to sort `order_date` values by each `customer_id` . Plus, we `INNER JOIN` two tables `menu` and `sales` as we need the `product_name` along the `customer_id` and `order_date` columns
 * We also use `DISTINCT` to exclude duplicates. For example, customer C order two ramen on the same day
@@ -106,6 +109,7 @@ LIMIT
 | product\_name | frequency |
 | ------------- | --------- |
 | ramen         | 8         |
+
 **Step**
 * `INNER JOIN` two tables similarly to the previous questions
 * Use `COUNT(*)` & `GROUP BY` to count the frequency of each product_name 
@@ -153,6 +157,7 @@ ORDER BY
 | B            | ramen         | 2                |
 | B            | sushi         | 2                |
 | C            | ramen         | 3                |
+
 **Step**
 This answer is similar to that of question 5, except that:
 * We use `GROUP BY` with two columns: customer_id & product_id
@@ -191,6 +196,7 @@ WHERE
 | ------------ | ------------- | -----------|
 | A            | curry         | 2021-01-07 |
 | B            | sushi         | 2021-01-11 |
+
 **Step**
 * Use INNER JOIN to join all 3 tables. However, we only keep the records having `order_date >= join_date` by adding one more condition after the `ON` clause (as we include the date on which each customer join Danny's restaurant membership)
 * Use `DENSE_RANK()` similarly to Question 3
@@ -229,6 +235,7 @@ WHERE
 | A            | sushi         | 2021-01-01 |
 | A            | curry         | 2021-01-01 |
 | B            | sushi         | 2021-01-04 |
+
  **Step**
  This question is answered similarly to Question 6, the only differences are:
 * `INNER JOIN` condition `t1.order_date < t2.join_date` (or using `WHERE` clause after joining 3 tables)
@@ -255,6 +262,7 @@ ORDER BY
 | ------------ | ----- | --------------- |
 | A            | 2     | 25              |
 | B            | 2     | 40              |
+
 **Step**
 * After joining tables, perform aggregation calculations with `COUNT(DISTINCT)` and `SUM()`
 ***
@@ -283,6 +291,7 @@ ORDER BY customer_id
 | A            | 860          |
 | B            | 940          |
 | C            | 360          |
+
 **Step**
 * Create a new column using `CASE WHEN` showing the point value for each type of dish
 * Use `SUM(price*point)` to calculate total points for each customer
@@ -326,6 +335,7 @@ ORDER BY
 | ------------ | ------------ |
 | A            | 1370         |
 | B            | 820          |
+
 **Step**
 * This question is similar to Question 9, except that we must modify the condition for `points` column. Plus, we must also consider all orders of each customer whether they have become a member or not to calculate the total point up to the end of January
 ***
