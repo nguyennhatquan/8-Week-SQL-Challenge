@@ -9,4 +9,6 @@ View the case study <a href="https://8weeksqlchallenge.com/case-study-2/">here</
 
 ## **Key learning points**
 * 
-
+* calculate differences between `TIMESTAMP` values
+	* Use `EXTRACT(EPOCH FROM column)`
+* An alternative to `REGEXP_MATCH` is `SUBTRING`. The only difference between those two is that while the former only return records with matching *regexp*, the latter return all records with NULL values for those not matching the specified *regexp*
