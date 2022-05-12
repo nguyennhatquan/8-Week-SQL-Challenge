@@ -156,6 +156,7 @@ ORDER BY
 | C            | ramen         |3                
 
 **Step**
+
 This answer is similar to that of question 5, except that:
 * We use `GROUP BY` with two columns: customer_id & product_id
 * `DENSE_RANK()` is used with `ORDER BY COUNT(*) DESC` and `PARTITION BY customer_id` to find the top 1 dish ordered by each customer
@@ -234,6 +235,7 @@ WHERE
 | B            | sushi         | 2021-01-04 |
 
  **Step**
+
  This question is answered similarly to Question 6, the only differences are:
 * `INNER JOIN` condition `t1.order_date < t2.join_date` (or using `WHERE` clause after joining 3 tables)
 * `ORDER BY t1.order_date DESC` for `DENSE_RANK()`
