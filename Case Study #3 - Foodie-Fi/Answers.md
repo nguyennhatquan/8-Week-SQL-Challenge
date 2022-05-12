@@ -335,7 +335,7 @@ FROM
 	*  `DATE_PART('day',AGE(DATE_1 - DATE_2))`
 
 ### 10.  Can you further breakdown this average value into 30 day periods (i.e. 0-30 days, 31-60 days etc)
-
+[*To be updated*]
 ### 11.  How many customers downgraded from a pro monthly to a basic monthly plan in 2020?
 ````sql
 WITH cte AS(
@@ -375,15 +375,11 @@ WHERE
 # 💰 C. Challenge Payment Question
 [ *To be updated...*]
 # 🎁 D. Outside The Box Questions
-
-The following are open ended questions which might be asked during a technical interview for this case study - there are no right or wrong answers, but answers that make sense from both a technical and a business perspective make an amazing impression!
+[*To be updated*]
 
 ### 1.  How would you calculate the rate of growth for Foodie-Fi?
 
 ### 2.  What key metrics would you recommend Foodie-Fi management to track over time to assess performance of their overall business?
-* Product
-	* Retention
-	* DAU/WAU/MAU
 
 ### 3.  What are some key customer journeys or experiences that you would analyse further to improve customer retention?
 
