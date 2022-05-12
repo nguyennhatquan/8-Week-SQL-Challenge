@@ -81,6 +81,7 @@ GROUP BY
 | ----------- | ----------------- |
 | Meatlovers  | 9                 |
 | Vegetarian  | 3                 |
+
 **Step**
 * Be cautious that we have to exclude the canceled orders , that's why we have to join 3 different tables in this question
 
@@ -248,10 +249,12 @@ WHERE
 | count				 | 
 | ------------ | 
 | 2            | 
+
 **Step**
 * As the question asks for "delivered pizzas", remember to exclude cancelled orders
 
 🧠 **Best Practice**
+
  *Final note of `SUM CASE WHEN`*
  
 After having sold the above questions, you may notice some signs indicating possible application of `SUM CASE WHEN`:
@@ -279,6 +282,7 @@ ORDER BY 1
 | 19   | 1     |
 | 21   | 3     |
 | 23   | 3     |
+
 ❗ **Note**
 * Differentiate between `DATE_TRUNC` and `DATE_PART` when grouping by hour
 	* `DATE_TRUNC` returns a `TIMESTAMP` based off the field input, which means 11:00:00 on April 11th is different from 11:00:00 April 12th
@@ -369,6 +373,7 @@ ORDER BY
 | 1          | 14                         |
 | 2          | 20                         |
 | 3          | 10                         |
+
 **Step**
 * As `pickup_time` is type `varchar`, we must firstly cast this column into `timestamp`
 * We'll use `EXTRACT(EPOCH FROM TIMESTAMP) to calculate difference between two TIMESTAMP`
@@ -451,6 +456,7 @@ ORDER BY
 | 103          | 23.4              |
 | 104          | 10.0              |
 | 105          | 25.0              |
+
 **Step**
 * Use `UNNEST(REGEXP_MATCH())` to only return what matches our regular expression  
 * For the CTE, use `DISTINCT` with both `customer_id` and `order_id` to make sure there isn't any missing data as there are duplicates of 
@@ -915,6 +921,7 @@ ORDER BY
 **Step**
 * After cleaning the original table, create 3 separate CTE with splitted rows of `ingredients`, `extras` and `exclusions`
 * Use `EXCEPT` and `UNION ALL` to merge the 3 CTEs 
+
 ❗ **Note**
 	*  `EXCEPT` has a default `DISTINCT` built in so it’s doing the same deduplication as the `UNION`. Thus, we must use `EXCEPT` before `UNION ALL` in our case to not let the extras be deleted
  * Use `TRIM` to remove any redundant whitespace before using `STRING_AGG`
@@ -1008,6 +1015,20 @@ ORDER BY
   2 DESC
 ````
 **Answer**
+| topping\_name | frequency |
+| ------------- | --------- |
+| Bacon         | 12        |
+| Mushrooms     | 11        |
+| Cheese        | 10        |
+| Pepperoni     | 9         |
+| Chicken       | 9         |
+| Salami        | 9         |
+| Beef          | 9         |
+| BBQ Sauce     | 8         |
+| Tomato Sauce  | 3         |
+| Onions        | 3         |
+| Tomatoes      | 3         |
+| Peppers       | 3         |
 
 **Step**
 * Using the answer from the previous section with a few adjustments, we can solve this question with ease
@@ -1093,6 +1114,7 @@ FROM
 | total_revenue| 
 | ------------ | 
 | 142           | 
+
 **Step**
 * Clean `extras` & `eclusions` columns + exclude cancelled orders
 * Use `REGEXP_SPLIT_TO_ARRAY` to return arrays for `extras`
