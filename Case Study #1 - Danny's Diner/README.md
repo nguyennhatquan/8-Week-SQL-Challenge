@@ -11,6 +11,6 @@ View the case study <a href="https://8weeksqlchallenge.com/case-study-1/">here</
 ## **Key learning points**
 * Using `JOIN` along with aggregation functions (`COUNT`, `SUM`)
 * Using window function `DENSE_RANK` along with `PARTITION BY` and `ORDER BY` clauses
-* Using **CTE** instead of **subqueries** for query efficiency
+* Using **CTE** instead of **subqueries** for better readability
 * Using `PARTITION BY` with multiple columns (Bonus question 12)
 
