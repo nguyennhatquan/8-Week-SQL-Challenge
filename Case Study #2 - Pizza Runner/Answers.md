@@ -591,6 +591,7 @@ ORDER BY
 | --------- | --------------------------------------------------------------------- |
 | 1         | Bacon, BBQ Sauce, Beef, Cheese, Chicken, Mushrooms, Pepperoni, Salami |
 | 2         | Cheese, Mushrooms, Onions, Peppers, Tomatoes, Tomato Sauce            |
+
 **Step** 
 * First, use `REGEXP_SPLIT_TO_TABLE(toppings, ',\s')` to create new rows for each part that is split from the text field using a specific regular expression, in this case, `',\s` (`\s` indicates whitespace)
 * Then, cast the new column into `INTEGER` to eliminate whitespace, which may cause trouble when calculating frequencies of values or joining
@@ -1305,7 +1306,7 @@ If Danny wants to expand his range of pizzas - how would this impact the existin
 	FROM
 	  temp_pizza_names
 	````
-	* Answer
+	Answer
 	
 	| pizza\_id | pizza\_name |
 	| --------- | ----------- |
@@ -1330,7 +1331,7 @@ If Danny wants to expand his range of pizzas - how would this impact the existin
 	FROM
 	  temp_pizza_recipes
 	````
-	* Answer
+	Answer
 	
 	| pizza\_id | toppings                   |
 	| --------- | -------------------------- |
