@@ -26,6 +26,12 @@ Try to keep it as short as possible - you may also want to run some sort of join
 | 19           | 0        | 2020-06-22  |
 | 19           | 2        | 2020-06-29  |
 | 19           | 3        | 2020-08-29  |
+
+**Answer**
+
+*As this question is quite simple, one sample answer is enough*
+* Customer with `id` 1 subcribe to trial plan on 2020-08-01 and then upgrade to basic monthly plan on 2020-08-08
+
 # 🔍 B. Data Analysis Questions
 
 ### 1.  How many customers has Foodie-Fi ever had?
@@ -125,6 +131,7 @@ FROM
 | number\_of\_churned\_customers | percentage |
 | ------------------------------ | ---------- |
 | 307                            | 30.70      |
+
 ❗ **Note**
 * This is a good example of how we can use SUM CASE WHEN for different situations. Another approach is to use CTE but it might be less efficient
 ### 5.  How many customers have churned straight after their initial free trial - what percentage is this rounded to the nearest whole number?
@@ -250,6 +257,7 @@ GROUP BY
 | 2        | 326                  | 32.6       |
 | 3        | 195                  | 19.5       |
 | 4        | 236                  | 23.6       |
+
 **Step**
 * In other words, the question ask for the distribution of customers by subscribed plan on `2020-12-31`. Thus, we perform calculations based on the lastest subscribed plan up to `2020-12-31`
 ❗ **Note**
@@ -372,17 +380,10 @@ The following are open ended questions which might be asked during a technical i
 ### 1.  How would you calculate the rate of growth for Foodie-Fi?
 
 ### 2.  What key metrics would you recommend Foodie-Fi management to track over time to assess performance of their overall business?
-* User Acquisition
-	* Download
-	* Cum Download
-	* % Organic Download
 * Product
 	* Retention
 	* DAU/WAU/MAU
-* Moneytization
-	* Revenue
-	* RPD
-	* **LTV**
+
 ### 3.  What are some key customer journeys or experiences that you would analyse further to improve customer retention?
 
 ### 4.  If the Foodie-Fi team were to create an exit survey shown to customers who wish to cancel their subscription, what questions would you include in the survey?
