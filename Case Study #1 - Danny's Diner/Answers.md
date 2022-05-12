@@ -1,7 +1,4 @@
-# Case Study Answers
-
-Each of the following case study questions can be answered using a single SQL statement:
-***
+# 🍜 Case Study Answers
 ### 1.  What is the total amount each customer spent at the restaurant?
 ````sql
 SELECT
@@ -156,7 +153,7 @@ ORDER BY
 | B            | curry         | 2                |
 | B            | ramen         | 2                |
 | B            | sushi         | 2                |
-| C            | ramen         | 3                |
+| C            | ramen         |3                
 
 **Step**
 This answer is similar to that of question 5, except that:
@@ -345,10 +342,83 @@ ORDER BY
 
 The following questions are related creating basic data tables that Danny and his team can use to quickly derive insights without needing to join the underlying tables using SQL.
 
-11.  Recreate the following table output using the available data:
+### 11.  Recreate the following table output using the available data:
+<a href="https://ibb.co/K7scw8T"><img src="https://i.ibb.co/Y8d4ZVH/Capture.png" alt="Capture" border="0"></a>
+
+**Answer**
+````sql
+SELECT
+  t1.customer_id,
+  t1.order_date,
+  t2.product_name,
+  t2.price,
+  CASE
+    WHEN t3.join_date IS NULL
+    OR t3.join_date > t1.order_date THEN 'N'
+    ELSE 'Y'
+  END AS member
+FROM
+  dannys_diner.sales AS t1
+  INNER JOIN dannys_diner.menu AS t2 ON t1.product_id = t2.product_id
+  LEFT JOIN dannys_diner.members AS t3 ON t1.customer_id = t3.customer_id
+ORDER BY
+  1,
+  2
+````
 
 ## Rank All The Things
 
-12.  Danny also requires further information about the `ranking` of customer products, but he purposely does not need the ranking for non-member purchases so he expects null `ranking` values for the records when customers are not yet part of the loyalty program.
+### 12.  Danny also requires further information about the `ranking` of customer products, but he purposely does not need the ranking for non-member purchases so he expects null `ranking` values for the records when customers are not yet part of the loyalty program.
 
+<a href="https://ibb.co/qJ3z0BV"><img src="https://i.ibb.co/VwcdHV5/Capture.png" alt="Capture" border="0"></a>
+
+**Answer**
+````sql
+WITH cte AS(
+  SELECT
+    t1.customer_id,
+    t1.order_date,
+    t3.join_date,
+    t2.product_name,
+    t2.price,
+    CASE
+      WHEN t3.join_date IS NULL
+      OR t3.join_date > t1.order_date THEN 'N'
+      ELSE 'Y'
+    END AS member
+  FROM
+    dannys_diner.sales AS t1
+    INNER JOIN dannys_diner.menu AS t2 ON t1.product_id = t2.product_id
+    LEFT JOIN dannys_diner.members AS t3 ON t1.customer_id = t3.customer_id
+)
+SELECT
+  customer_id,
+  order_date,
+  product_name,
+  price,
+  member,
+  CASE
+    WHEN join_date <= order_date THEN (
+      DENSE_RANK() OVER(
+        PARTITION BY customer_id, member
+        ORDER BY order_date
+      )
+    )
+    ELSE NULL
+  END AS ranking
+FROM
+  cte
+ORDER BY
+  1,
+  2
+````
+
+❗ **Note**
+* At first, I have problem with this question as the initial result turns out to be something like this 
+
+	<a href="https://ibb.co/L1vF0nc"><img src="https://i.ibb.co/1Tbg08P/Capture.png" alt="Capture" border="0"></a>
+
+* The reason for this is that at first I only partition rows into groups by customer_id, i.e. `PARTITION BY customer_id` , which cause the `DENSE_RANK()` function to rank rows regardless of membership status
+
+* The solution to this problem is to simply use `PARTITION BY customer_id, member`
 
