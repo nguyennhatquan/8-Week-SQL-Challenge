@@ -8,6 +8,8 @@ View the case study <a href="https://8weeksqlchallenge.com/case-study-3/">here</
 </p>
 
 ## **Key learning points**
+* Deal with "slowly changing dimension" (SDC) table using ranking function (`ROW_NUMBER`/`RANK`/`DENSE_RANK`)
+  > A Slowly Changing Dimension (SCD) is **a dimension that stores and manages both current and historical data over time in a data warehouse**
 * When dealing with `DATE` data type, to calculate the difference between them, there are 2 possible approach:
 	*  `DATE_1 - DATE_`2 will return the difference of days in `INTEGER`
 	*  `DATE_PART('day',AGE(DATE_1 - DATE_2))`

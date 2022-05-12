@@ -133,7 +133,7 @@ FROM
 | 307                            | 30.70      |
 
 ❗ **Note**
-* This is a good example of how we can use SUM CASE WHEN for different situations. Another approach is to use CTE but it might be less efficient
+* This is a good example of how we can use `SUM CASE WHEN` for different situations. Another approach is to use CTE but it might be less efficient
 ### 5.  How many customers have churned straight after their initial free trial - what percentage is this rounded to the nearest whole number?
 ````sql
 WITH cte AS(
@@ -260,10 +260,11 @@ GROUP BY
 
 **Step**
 * In other words, the question ask for the distribution of customers by subscribed plan on `2020-12-31`. Thus, we perform calculations based on the lastest subscribed plan up to `2020-12-31`
+
 ❗ **Note**
-	* Be careful that we are dealing with a "slowly changing dimension" (SCD) table
-		> A Slowly Changing Dimension (SCD) is **a dimension that stores and manages both current and historical data over time in a data warehouse**
-	* That's why we use ROW_NUMBER() to identify the lastest purchased plan of each customer ( assuming they didn't subcribe to different plan on the same day, that would required the time value to identify the correct record) 
+* Be careful that we are dealing with a "slowly changing dimension" (SCD) table
+  > A Slowly Changing Dimension (SCD) is **a dimension that stores and manages both current and historical data over time in a data warehouse**
+* That's why we use `ROW_NUMBER()` to identify the lastest purchased plan of each customer ( assuming they didn't subcribe to different plan on the same day, that would required the time value to identify the correct record) 
 ### 8.  How many customers have upgraded to an annual plan in 2020?
 ````sql
 SELECT
