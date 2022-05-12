@@ -1,4 +1,4 @@
-# 🍕 Case Study #4: Data Bank
+# 💰 Case Study #4: Data Bank
 <p align="center">
 <img width="400px"  src="https://8weeksqlchallenge.com/images/case-study-designs/4.png" />
 </p>
