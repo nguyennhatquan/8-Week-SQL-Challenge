@@ -331,8 +331,7 @@ GROUP BY
 | 2021-01-15| 1     |
 
 **Step**
-* Use `DATE_TRUNCT('week', registration_date)::DATE` to
-* As week starts on `2021-01-01` as the question requires, we must
+* For week to start on `2021-01-01` as the question requires, we must shift our original starting day by 4 days forwards by using `DATE_TRUNC`
 
 ### 2.  What was the average time in minutes it took for each runner to arrive at the Pizza Runner HQ to pickup the order?
 ````sql
@@ -1119,8 +1118,8 @@ FROM
 **Step**
 * Clean `extras` & `eclusions` columns + exclude cancelled orders
 * Use `REGEXP_SPLIT_TO_ARRAY` to return arrays for `extras`
-* Use `CARDINALITY` to return the length of 
-* Use `COALESCE`
+* Use `CARDINALITY` to return the length of an array
+* Use `COALESCE` to return the first non-NULL value
 ### 3.  The Pizza Runner team now wants to add an additional ratings system that allows customers to rate their runner, how would you design an additional table for this new dataset - generate a schema for this new table and insert your own data for ratings for each successful customer order between 1 to 5.
 ````sql
 SELECT
