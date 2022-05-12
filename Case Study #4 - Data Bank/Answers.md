@@ -1,4 +1,4 @@
-# A. Customer Nodes Exploration
+# 👨 A. Customer Nodes Exploration
 
 ### 1.  How many unique nodes are there on the Data Bank system?
 ````sql
@@ -117,7 +117,7 @@ FROM
 * We must calculate the average duration for each customer in prior to calculating the final average value, or else we only calculate the average allocation duration of different nodes
 ### 5.  What is the median, 80th and 95th percentile for this same reallocation days metric for each region?
 [ *To be updated...*]
-# B. Customer Transactions
+# 💳 B. Customer Transactions
 
 ### 1.  What is the unique count and total amount for each transaction type?
 ````sql
