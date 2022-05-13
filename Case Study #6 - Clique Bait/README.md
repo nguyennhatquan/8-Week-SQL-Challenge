@@ -8,3 +8,5 @@ View the case study <a href="https://8weeksqlchallenge.com/case-study-6/">here</
 </p>
 
 ## **Key learning points**
+* Thinking in Funnel to analyse different products
+* `ORDER BY` to `STRING_AGG`
