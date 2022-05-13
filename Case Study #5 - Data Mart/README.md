@@ -8,7 +8,18 @@ View the case study <a href="https://8weeksqlchallenge.com/case-study-5/">here</
 </p>
 
 ## **Key learning points**
-* Perform Data Cleaning
-    * Mapping new columns ...
-* Perform Before & After Data Analysis
+* Perform Data Cleaning:
+    * Use `TO_DATE` to convert string to `DATE` data type based on the specified format
+    * Extract components from `DATE` data type using `DATE_PART`
+    * Mapping new columns using `CASE WHEN` and `LEFT`, `RIGHT`
+* Use `GENERATE SERIES` to create new values based on specified range
+* Practice dealing with "the average of the averages" problem
+* Perform Before & After Data Analysis:
+    * Use `CASE WHEN` to create new column with 'Before' or 'After' tag
+    * Use **Analytic Function** `LAG` to calculate rate of growth/reduction + percent of change
+	    * Rate = new value - original value / original value
+	    * Percent of change = Rate * 100
+* Although it is common knowledge that `GROUP BY` clause is executed before `SELECT` clause, it appears that we can use the following elements regarding `CASE WHEN` in `GROUP BY` clause:
+    * The whole `CASE WHEN` clause
+    * The column alias or column number (1, 2, etc.) of `CASE WHEN` column
 
