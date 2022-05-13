@@ -1,4 +1,4 @@
-# 🍕 Case Study #6: Clique Bait
+# 🎣 Case Study #6: Clique Bait
 <p align="center">
 <img width="400px"  src="https://8weeksqlchallenge.com/images/case-study-designs/6.png" />
 </p>
