@@ -23,6 +23,8 @@ View the case study <a href="https://8weeksqlchallenge.com/case-study-7/">here</
     >
     > Not guarantee to return one of the value in the distribution. Instead, this functions interpolates the percentile. This might not be accepted in business practice, so use `PERCENTILE_DISC()` instead in such cases
 * Be cautious when using **Aggregation Function** along with **Window Function**:
+    
+    *Question 8 Part C*
     ````sql
     SELECT
     t2.category_id,
