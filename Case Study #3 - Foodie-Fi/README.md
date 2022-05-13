@@ -8,6 +8,7 @@ View the case study <a href="https://8weeksqlchallenge.com/case-study-3/">here</
 </p>
 
 ## **Key learning points**
+* Gain knowledge of what **a subscription based business model** looks like from data level 
 * Deal with "slowly changing dimension" (SDC) table using **Ranking Functions** (`ROW_NUMBER`/`RANK`/`DENSE_RANK`)
   > A Slowly Changing Dimension (SCD) is **a dimension that stores and manages both current and historical data over time in a data warehouse**
 * When dealing with `DATE` data type, to calculate the difference between them, there are 2 possible approach:
