@@ -1,3 +1,7 @@
+<p align = "left"> 
+  <img width="400px" src="https://i.pinimg.com/originals/ee/48/ad/ee48ad1dcd4096cd135afb295246e616.gif" />
+</p>
+
 This challenge is a part of [Serious SQL course](https://www.datawithdanny.com/courses/serious-sql)
 * **Skills learnt**: apply JOIN framework, combine aggregation functions and window functions, join multiple CTEs to solve advanced problems, apply Window Functions in real-life business questions, perform Data Cleaning and Data Analysis
 * **What to improve**:
