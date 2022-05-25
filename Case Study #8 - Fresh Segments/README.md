@@ -4,7 +4,8 @@
 </p>
 
 <p align="center">
-View the case study <a href="https://8weeksqlchallenge.com/case-study-8/">here</a> and my <b>solution</b> <a href="https://github.com/nguyennhatquan/8-Week-SQL-Challenge/blob/main/Case%20Study%20%235%20-%20Data%20Mart/Answers.md">here</a>
+View the case study <a href="https://8weeksqlchallenge.com/case-study-8/">here</a> and my <b>solution</b> <a href="https://github.com/nguyennhatquan/8-Week-SQL-Challenge/blob/main/Case%20Study%20%238%20-%20Fresh%20Segments/Answers.md">here</a>
 </p>
 
 ## **Key learning points**
+[*To be updated*]
