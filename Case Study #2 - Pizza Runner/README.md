@@ -14,8 +14,8 @@ View the case study <a href="https://8weeksqlchallenge.com/case-study-2/">here</
     * When we must use `COUNT` together with `GROUP BY` (Question 5)
     * When we must create new columns using `CASE WHEN` and return a sum number (Question 7, Question 8)
 * Learn the difference between `DATE_TRUNC` and `DATE_PART` 
-    * DATE_TRUNC returns a `TIMESTAMP` based off the field input, which means 11:00:00 on April 11th is different from 11:00:00 April 12th
-    * DATE_PART returns an `INTEGER`
+    * `DATE_TRUNC` returns a `TIMESTAMP` based off the field input, which means 11:00:00 on April 11th is different from 11:00:00 April 12th
+    * `DATE_PART` returns an `INTEGER`
 * Use `TO_CHAR` to convert a `timestamp`, `interval`, ... to string under the desired format
 * Use a trick with DATE_TRUNC to custom the start of the week
     * E.g., shifting the starting day of week 2 days forwards by using `DATE_TRUNC('week', date_column - INTERVAL '2 DAY') + INTERVAL '2 DAY'`
