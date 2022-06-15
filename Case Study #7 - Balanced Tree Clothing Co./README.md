@@ -57,4 +57,4 @@ View the case study <a href="https://8weeksqlchallenge.com/case-study-7/">here</
     * In the query above, once the `GROUP BY` clause is executed, individual records can not longer be accessed. Thus, another aggregation `SUM` function must be put into the window function `SUM` to calculate the total sum as follows:
         * The inner `SUM` will be executed after the `GROUP BY` clause
         * Then, the outer `SUM` will sum up the results from the inner `SUM`
-* Learn that `DISTINCT` is not compatible with window function. Thus, `COUNT(DISTINCT txn_id)` will return an error
+* Learn that `DISTINCT` is not compatible with window function. Thus, `COUNT(DISTINCT txn_id) OVER()` will return an error
