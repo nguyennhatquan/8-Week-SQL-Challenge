@@ -9,7 +9,7 @@ View the case study <a href="https://8weeksqlchallenge.com/case-study-2/">here</
 
 ## **Key learning points**
 * Be cautious of the difference between **`NULL`**, **'null'** and whitespace **''** when filtering table
-* Use `WHERE EXISTS` to perform **LEFT SEMI JOIN** instead of `INNER JOIN` for efficiency purpose as the former method doesn't return the whole table
+* Use `WHERE EXISTS` to perform **LEFT SEMI JOIN** instead of `LEFT JOIN` for efficiency purpose as the former method doesn't return the whole table
 * Learn to detect signs indicating possible application of `SUM CASE WHEN` for a more readable result:
     * When we must use `COUNT` together with `GROUP BY` (Question 5)
     * When we must create new columns using `CASE WHEN` and return a sum number (Question 7, Question 8)
